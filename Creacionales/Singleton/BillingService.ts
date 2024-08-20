@@ -5,7 +5,7 @@ export class BillingService {
     private notificationManager: NotificationManager;
 
     constructor() {
-        this.notificationManager = new NotificationManager();
+        this.notificationManager = NotificationManager.getSingleInstance();
     }
 
     public notifyPaymentDue(studentEmail: string): void {
