@@ -135,3 +135,4 @@ dist
 # Archivos de compilación en los proyectos
 
 /Creacionales/**/*.js
+/Estructurales/**/*.js
