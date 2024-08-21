@@ -12,6 +12,7 @@ export class CourseBuilder {
     private students: IStudent[] | null = null;
     private startDate: Date | null = null;
     private endDate: Date | null = null;
+    private customMethod:(text:string) => void = (text:string) =>{}
  
     public setName(name:string):CourseBuilder{
         this.name = name;
@@ -64,6 +65,40 @@ export class CourseBuilder {
             this.startDate,
             this.endDate
         );
+        course.addExtraBehavior = this.customMethod
         return course;
     }
+
+    //Ejercicio correcto:
+
+    public setCustomMethod(method:(text:string)=>void):CourseBuilder{
+        this.customMethod = method;
+        return this;
+    }
+
+
+
+
+    // Intentos incorrectos
+    // public static addedFuction(course:Course):Course{
+    //     console.log('Test')
+    //     return course
+    // }
+
+    // public static addStudent(course:Course, student:IStudent){
+    //     course.students?.push(student)
+    //     return this
+    // }
+
+    
+    // public static addStudent(course:Course, student:IStudent){
+    //     console.log('Nueva funcion implementada')
+    //     return this
+    // }
+
+    // public useFunction(course:Course, text:string):Course{
+    //     course.addExtraBehavior(text)
+    // }
+
+    
 }

@@ -5,11 +5,15 @@ import { CourseBuilder } from './CourseBuilder';
 const basicCourse = new CourseBuilder()
 .setName('Introducción a TypeScript')
 .setInstructor({ name: 'Alice', email: 'alice@example.com', experience: 5 })
+.setCustomMethod((message:string)=>{
+    console.log('Nueva funcionalidad agregada ' + message)
+})
 .buildCourse();
 
 console.log('Curso 1:');
 basicCourse.displayCourseInfo();
 console.log('*****************************************');
+basicCourse.addExtraBehavior('Este curso es sabatino') //Funcionalidad adicional por medio del builder
 
 // Creación de un curso completo con todos los detalles
 const advancedCourse = new CourseBuilder()
@@ -30,3 +34,13 @@ const advancedCourse = new CourseBuilder()
 console.log('Curso 2:');
 advancedCourse.displayCourseInfo();
 console.log('*****************************************');
+
+const newStudent = { name:"alex", email:"alex@example.com"}
+
+// const addedFuctionCourse = new CourseBuilder()
+// .addStudent(newStudent,basicCourse)
+// .buildCourse()
+
+// CourseBuilder.addStudent(basicCourse,newStudent)
+// basicCourse.displayCourseInfo()
+

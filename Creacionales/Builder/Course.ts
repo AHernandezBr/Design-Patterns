@@ -33,6 +33,10 @@ export class Course {
         this.endDate = endDate || new Date(); // Valor por defecto
     }
 
+    public addExtraBehavior(text:string):void{
+        //Funcionalidad implementada desde el exterior
+    }
+
     public displayCourseInfo(): void {
         console.log(`Curso: ${this.name}`);
         console.log(`Descripción: ${this.description}`);
