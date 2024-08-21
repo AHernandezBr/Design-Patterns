@@ -138,3 +138,4 @@ dist
 /Creacionales/Abstract-Factory/*.js
 /Creacionales/Abstract-Factory/UIObjects/*.js
 /Creacionales/Singleton/*.js
+/Creacionales/Builder/*.js
