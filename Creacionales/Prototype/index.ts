@@ -54,3 +54,7 @@ const advancedCourseAPIs = new CourseBuilder().fromPrototype(advancedCourse.clon
 .buildCourse()
 
 advancedCourseDatabases.displayCourseInfo()
+
+/* La propiedad name ahora es privada, por lo que no es posible reasignarle un valor
+advancedCourseDatabases.name = 'x'
+*/

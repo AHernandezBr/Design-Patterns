@@ -4,14 +4,14 @@ import { ISchedule } from "./ISchedule";
 import { IStudent } from "./IStudent";
 
 export class Course {
-    public name: string;
-    public description: string;
-    public materials: string[];
-    public instructorDetails: IInstructorDetails;
-    public schedule: ISchedule | null;
-    public students: IStudent[] | null;
-    public startDate: Date | null;
-    public endDate: Date | null;
+    private name: string;
+    private description: string;
+    private materials: string[];
+    private instructorDetails: IInstructorDetails;
+    private schedule: ISchedule | null;
+    private students: IStudent[] | null;
+    private startDate: Date | null;
+    private endDate: Date | null;
 
     constructor(
         name: string,
@@ -32,6 +32,39 @@ export class Course {
         this.startDate = startDate || new Date(); // Valor por defecto
         this.endDate = endDate || new Date(); // Valor por defecto
     }
+
+    public get getName():string{
+        return this.name
+    }
+
+    public get getDescription():string{
+        return this.description
+    }
+
+    public get getMaterials():string[]{
+        return this.materials
+    }
+
+    public get getIntructorDetails():IInstructorDetails{
+        return this.instructorDetails
+    }
+
+    public get getSchedule():ISchedule|null{
+        return this.schedule
+    }
+
+    public get getStudents():IStudent[]|null{
+        return this.students
+    }
+
+    public get getStartDate():Date|null{
+        return this.startDate
+    }
+
+    public get getEndDate():Date|null{
+        return this.endDate
+    }
+
 
     public addExtraBehavior(text:string):void{
         //Funcionalidad implementada desde el exterior
