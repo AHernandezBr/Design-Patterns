@@ -34,10 +34,10 @@ export class CourseBuilder {
         return this;
     }
 
-    // public setSchedule(schedule:ISchedule){
-    //     this.schedule = schedule
-    //     return this
-    // }
+    public setSchedule(schedule:ISchedule){
+        this.schedule = schedule
+        return this
+    }
 
     public setStudents(students:IStudent[]){
         this.students = students
@@ -74,4 +74,19 @@ export class CourseBuilder {
         this.customMethod = method;
         return this;
     }   
+
+    public fromPrototype(course:Course):CourseBuilder{
+        this.name = course.name
+        this.description = course.description
+        this.materials = [...course.materials]
+        this.instructorDetails = {...course.instructorDetails}
+        this.schedule = course.schedule? {...course.schedule}:null
+        this.students = course.students? course.students.map(student => ({ ...student })) : null
+        this.startDate = course.startDate ? new Date(course.startDate.getTime()) : null
+        this.endDate = course.endDate ? new Date(course.endDate.getTime()) : null
+        this.customMethod = course.addExtraBehavior
+        return this
+    }
+    
+
 }

@@ -134,8 +134,4 @@ dist
 
 # Archivos de compilación en los proyectos
 
-/Creacionales/Factory/*.js
-/Creacionales/Abstract-Factory/*.js
-/Creacionales/Abstract-Factory/UIObjects/*.js
-/Creacionales/Singleton/*.js
-/Creacionales/Builder/*.js
+/Creacionales/**/*.js

@@ -18,9 +18,9 @@ basicCourse.addExtraBehavior('Este curso es sabatino') //Funcionalidad adicional
 // Creación de un curso completo con todos los detalles
 const advancedCourse = new CourseBuilder()
 .setName('TypeScript Avanzado')
-.setDescription('Un curso avanzado sobre TypeScript')
-.setMaterials(['Libro', 'Videos', 'Proyectos'])
-.setInstructor({ name: 'Bob', email: 'bob@example.com', experience: 10 })
+.setDescription('Template para cursos avanzados')
+.setMaterials(['Libro', 'Videos', 'Proyectos', 'Diapositivas'])
+.setSchedule({days:['Lunes'],time:'08:00am a 05:00pm'})
 .setStudents([
             { name: 'Kevin', email: 'Kevin@example.com' },
             { name: 'Victor', email: 'Victor@example.com' },
@@ -34,8 +34,23 @@ const advancedCourse = new CourseBuilder()
 console.log('Curso 2:');
 advancedCourse.displayCourseInfo();
 console.log('*****************************************');
+console.log('Imprimiendo clon para base de datos')
 
-const newStudent = { name:"alex", email:"alex@example.com"}
 
-const newCurse = advancedCourse
-newCurse.displayCourseInfo()
+const advancedCourseDatabases = new CourseBuilder().fromPrototype(advancedCourse.clone())
+.setName('Curso avanzado de bases de datos')
+.setInstructor({ name: 'Emmanuel', email: 'emmanuel@example.com', experience: 10 })
+.setSchedule({days:['Martes', 'Jueves'],time:'08:00am a 05:00pm'})
+.buildCourse()
+
+advancedCourseDatabases.displayCourseInfo()
+
+console.log('*****************************************');
+console.log('Impimiendo clon para avanzado de APIs')
+const advancedCourseAPIs = new CourseBuilder().fromPrototype(advancedCourse.clone())
+.setName('Curso avanzado de bases de datos')
+.setInstructor({ name: 'Ivan', email: 'ivan@example.com', experience: 10 })
+.setSchedule({days:['Miercoles', 'Viernes'],time:'08:00am a 05:00pm'})
+.buildCourse()
+
+advancedCourseDatabases.displayCourseInfo()
