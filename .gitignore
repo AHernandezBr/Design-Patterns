@@ -136,3 +136,4 @@ dist
 
 /Creacionales/**/*.js
 /Estructurales/**/*.js
+/Comportamiento/**/*.js
